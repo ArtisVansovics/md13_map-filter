@@ -1,6 +1,8 @@
 // eslint-disable-next-line import/extensions,import/no-unresolved
 import shows from './shows';
 
+// MAP METHOD
+
 // Get an array of all titles
 const showsTitles = shows.map((show) => show.title);
 console.log('Show titles:', showsTitles);
@@ -87,7 +89,7 @@ const showsWithUpdatedRatingAndCount = shows.map((show) => (
 console.log('Shows with id: 2 rating updated to 8 and count + 1:', showsWithUpdatedRatingAndCount);
 
 // If rating > 7, change isPopular value to true
-const showsThatArePopular = shows.map((show) => (
+const showsSetPopularByRating = shows.map((show) => (
   show.ratingDetails.rating > 7
     ? {
       ...show,
@@ -95,7 +97,7 @@ const showsThatArePopular = shows.map((show) => (
     }
     : show
 ));
-console.log('If show\'s rating > 7, change isPopular to true:', showsThatArePopular);
+console.log('If show\'s rating > 7, change isPopular to true:', showsSetPopularByRating);
 
 // If isPopular === true, change rating to 10
 const showsThatArePopularRatingToTen = shows.map((show) => (
@@ -190,4 +192,46 @@ const showsChangeReleaseDate = shows.map((show) => (
 console.log(
   'If show\'s id is 1 and its episode id is 24, change episode release date:',
   showsChangeReleaseDate,
+);
+
+// FILTER METHOD
+
+// Get all shows, where rating < 7
+const showsWithRatingBelowSeven = shows.filter((show) => (
+  show.ratingDetails.rating < 7));
+console.log(
+  'Shows, where rating is below 7:',
+  showsWithRatingBelowSeven,
+);
+
+// Get all shows, where description includes "DC"
+const showsWithDcInDescription = shows.filter((show) => (
+  show.description.includes('DC')));
+console.log(
+  'Shows, where description includes "DC":',
+  showsWithDcInDescription,
+);
+
+// Get all shows, where isPopular === true
+const showsThatArePopular = shows.filter((show) => (
+  show.isPopular === true));
+console.log(
+  'Shows, where isPopular is true:',
+  showsThatArePopular,
+);
+
+// Get all shows, where genres include Drama
+const showsGenresIncludesDrama = shows.filter((show) => (
+  show.genres.includes('Drama')));
+console.log(
+  'Shows, where genres include Drama:',
+  showsGenresIncludesDrama,
+);
+
+// Get all shows, where episode array length >= 2
+const showsWithAtLeastTwoEpisodes = shows.filter((show) => (
+  show.episodes.length >= 2));
+console.log(
+  'Shows, where episode array has at least two values:',
+  showsWithAtLeastTwoEpisodes,
 );
