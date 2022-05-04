@@ -261,3 +261,30 @@ console.log(
   'Shows, where title starts with Sup:',
   showsTitleStartsWithSup,
 );
+
+// Get all shows, where id === 2
+const showsWithIdOfTwo = shows.filter((show) => (
+  show.id === 2));
+console.log(
+  'Shows, where id is two:',
+  showsWithIdOfTwo,
+);
+
+// Get all shows, where id !== 2
+const showsWithIdOfNotTwo = shows.filter((show) => (
+  show.id !== 2));
+console.log(
+  'Shows, where id is not two:',
+  showsWithIdOfNotTwo,
+);
+
+// Get all episodes, where genres include "Drama" and rating > 7
+const episodesWithDramaAndRatingAboveSeven = shows.filter((show) => (
+  show.genres.includes('Drama') && show.ratingDetails.rating > 7
+)).flatMap((show) => (
+  show.episodes
+));
+console.log(
+  'Episodes,  where genres include "Drama" and rating is above 7:',
+  episodesWithDramaAndRatingAboveSeven,
+);
