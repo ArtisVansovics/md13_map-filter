@@ -154,3 +154,40 @@ console.log(
   'All possible show genres in a string array:',
   showsGetAllGenres,
 );
+
+// If year > 2016 and isPopular === true,
+// add 'Documentary' to genres
+const showsAddGenreDocumentary = shows.map((show) => (
+  show.year > 2016 && show.isPopular === true
+    ? {
+      ...show,
+      genres: [...show.genres, 'Documentary'],
+    }
+    : show
+));
+console.log(
+  'If show is popular and came out after 2016, add \'Documentary\' genre:',
+  showsAddGenreDocumentary,
+);
+
+// If id === 1 and episode id === 24,
+// change episode releaseDate to '2022-10-12 00:00:00'
+const showsChangeReleaseDate = shows.map((show) => (
+  show.id === 1
+    ? {
+      ...show,
+      episodes: show.episodes.map((episode) => (
+        episode.id === 24
+          ? {
+            ...episode,
+            released: '2022-10-12 00:00:00',
+          }
+          : episode
+      )),
+    }
+    : show
+));
+console.log(
+  'If show\'s id is 1 and its episode id is 24, change episode release date:',
+  showsChangeReleaseDate,
+);
