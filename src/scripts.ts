@@ -235,3 +235,29 @@ console.log(
   'Shows, where episode array has at least two values:',
   showsWithAtLeastTwoEpisodes,
 );
+
+// Get all shows, where episode title is Wendigo
+const showsWithWendigoEpisode = shows.filter((show) => (
+  show.episodes.map((episode) => (
+    episode.title
+  )).includes('Wendigo')));
+console.log(
+  'Shows, where episode title is Wendigo:',
+  showsWithWendigoEpisode,
+);
+
+// Get all shows, where year is < 2019
+const showsWithYearBelow2019 = shows.filter((show) => (
+  show.year < 2019));
+console.log(
+  'Shows, where where year is below 2019:',
+  showsWithYearBelow2019,
+);
+
+// Get all shows, where title starts with Sup
+const showsTitleStartsWithSup = shows.filter((show) => (
+  show.title.startsWith('Sup')));
+console.log(
+  'Shows, where title starts with Sup:',
+  showsTitleStartsWithSup,
+);
