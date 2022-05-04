@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/extensions,import/no-unresolved
 import shows from './shows';
 
 // MAP METHOD
@@ -17,7 +16,8 @@ console.log('Show ratings:', showsRatings);
 
 // Get an array of ratings rounded to 2 decimal places
 const showsRatingsRounded = shows.map((show) => (
-  show.ratingDetails.rating.toFixed(2)));
+  show.ratingDetails.rating.toFixed(2)
+));
 console.log('Show ratings rounded to 2 decimal places:', showsRatingsRounded);
 
 // Capitalise all genres
@@ -25,7 +25,8 @@ const showsGenresCapitalised = shows.map((show) => (
   {
     ...show,
     genres: show.genres.map((genre) => genre.toUpperCase()),
-  }));
+  }
+));
 console.log('Shows with genres to uppercase:', showsGenresCapitalised);
 
 // Double all ratingDetails.count
@@ -36,7 +37,8 @@ const showsRatingsCountDouble = shows.map((show) => (
       ...show.ratingDetails,
       count: show.ratingDetails.count * 2,
     },
-  }));
+  }
+));
 console.log('Shows with ratings count doubled:', showsRatingsCountDouble);
 
 // Round all ratings to 2 decimal places
@@ -47,7 +49,8 @@ const showsWithRatingsRounded = shows.map((show) => (
       ...show.ratingDetails,
       rating: show.ratingDetails.rating.toFixed(2),
     },
-  }));
+  }
+));
 console.log('Shows with ratings rounded to 2 decimal places:', showsWithRatingsRounded);
 
 // map() each object to only have id, title, description
@@ -198,7 +201,8 @@ console.log(
 
 // Get all shows, where rating < 7
 const showsWithRatingBelowSeven = shows.filter((show) => (
-  show.ratingDetails.rating < 7));
+  show.ratingDetails.rating < 7
+));
 console.log(
   'Shows, where rating is below 7:',
   showsWithRatingBelowSeven,
@@ -206,7 +210,8 @@ console.log(
 
 // Get all shows, where description includes "DC"
 const showsWithDcInDescription = shows.filter((show) => (
-  show.description.includes('DC')));
+  show.description.includes('DC')
+));
 console.log(
   'Shows, where description includes "DC":',
   showsWithDcInDescription,
@@ -214,7 +219,8 @@ console.log(
 
 // Get all shows, where isPopular === true
 const showsThatArePopular = shows.filter((show) => (
-  show.isPopular === true));
+  show.isPopular === true
+));
 console.log(
   'Shows, where isPopular is true:',
   showsThatArePopular,
@@ -222,7 +228,8 @@ console.log(
 
 // Get all shows, where genres include Drama
 const showsGenresIncludesDrama = shows.filter((show) => (
-  show.genres.includes('Drama')));
+  show.genres.includes('Drama')
+));
 console.log(
   'Shows, where genres include Drama:',
   showsGenresIncludesDrama,
@@ -230,7 +237,8 @@ console.log(
 
 // Get all shows, where episode array length >= 2
 const showsWithAtLeastTwoEpisodes = shows.filter((show) => (
-  show.episodes.length >= 2));
+  show.episodes.length >= 2
+));
 console.log(
   'Shows, where episode array has at least two values:',
   showsWithAtLeastTwoEpisodes,
@@ -240,7 +248,8 @@ console.log(
 const showsWithWendigoEpisode = shows.filter((show) => (
   show.episodes.map((episode) => (
     episode.title
-  )).includes('Wendigo')));
+  )).includes('Wendigo')
+));
 console.log(
   'Shows, where episode title is Wendigo:',
   showsWithWendigoEpisode,
@@ -248,7 +257,8 @@ console.log(
 
 // Get all shows, where year is < 2019
 const showsWithYearBelow2019 = shows.filter((show) => (
-  show.year < 2019));
+  show.year < 2019
+));
 console.log(
   'Shows, where where year is below 2019:',
   showsWithYearBelow2019,
@@ -256,7 +266,8 @@ console.log(
 
 // Get all shows, where title starts with Sup
 const showsTitleStartsWithSup = shows.filter((show) => (
-  show.title.startsWith('Sup')));
+  show.title.startsWith('Sup')
+));
 console.log(
   'Shows, where title starts with Sup:',
   showsTitleStartsWithSup,
@@ -264,7 +275,8 @@ console.log(
 
 // Get all shows, where id === 2
 const showsWithIdOfTwo = shows.filter((show) => (
-  show.id === 2));
+  show.id === 2
+));
 console.log(
   'Shows, where id is two:',
   showsWithIdOfTwo,
@@ -272,7 +284,8 @@ console.log(
 
 // Get all shows, where id !== 2
 const showsWithIdOfNotTwo = shows.filter((show) => (
-  show.id !== 2));
+  show.id !== 2
+));
 console.log(
   'Shows, where id is not two:',
   showsWithIdOfNotTwo,
