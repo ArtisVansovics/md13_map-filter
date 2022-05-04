@@ -85,3 +85,72 @@ const showsWithUpdatedRatingAndCount = shows.map((show) => (
     : show
 ));
 console.log('Shows with id: 2 rating updated to 8 and count + 1:', showsWithUpdatedRatingAndCount);
+
+// If rating > 7, change isPopular value to true
+const showsThatArePopular = shows.map((show) => (
+  show.ratingDetails.rating > 7
+    ? {
+      ...show,
+      isPopular: true,
+    }
+    : show
+));
+console.log('If show\'s rating > 7, change isPopular to true:', showsThatArePopular);
+
+// If isPopular === true, change rating to 10
+const showsThatArePopularRatingToTen = shows.map((show) => (
+  show.isPopular === true
+    ? {
+      ...show,
+      ratingDetails: {
+        ...show.ratingDetails,
+        rating: 10,
+      },
+    }
+    : show
+));
+console.log('If show is popular, change its rating to 10:', showsThatArePopularRatingToTen);
+
+// If genres include 'Science-Fiction', change available to true
+const showsIncludingScienceFictionUpdateAvailability = shows.map((show) => (
+  show.genres.includes('Science-Fiction') === true
+    ? {
+      ...show,
+      available: true,
+    }
+    : show
+));
+console.log(
+  'If show\'s genres include Science-Fiction, change its availability to true:',
+  showsIncludingScienceFictionUpdateAvailability,
+);
+
+// If isPopular === true, map() episodes, to be an array of episode ids
+// else make episodes an empty []
+const showsGetPopularEpisodeIds = shows.map((show) => (
+  show.isPopular === true
+    ? {
+      ...show,
+      episodes: show.episodes.map((episode) => episode.id),
+    }
+    : {
+      ...show,
+      episodes: [],
+    }
+));
+console.log(
+  'If show is popular, map its episodes to an array of episode ids:',
+  showsGetPopularEpisodeIds,
+);
+
+// Get an array of all possible genres (not [['', ''], ['']] but ['', '', ''])
+const showsGetAllGenres = [...new Set(
+  shows.flatMap((show) => (
+    show.genres
+  )),
+)];
+// [...new Set(array)] ==> array with only unique values!
+console.log(
+  'All possible show genres in a string array:',
+  showsGetAllGenres,
+);
